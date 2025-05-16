@@ -1,0 +1,143 @@
+{
+  "taxonomy": {
+    "parameters": {
+      "n": "number of jobs",
+      "m": "number of machines",
+      "p_max": "maximum processing time",
+      "d_max": "maximum deadline",
+      "r_max": "maximum release time",
+      "k": "solution size parameter",
+      "w_max": "maximum weight",
+      "Delta": "maximum degree (for precedence graphs)",
+      "tw": "treewidth (for precedence graphs)"
+    },
+    "complexity_classes": {
+      "FPT": "Fixed-Parameter Tractable",
+      "XP": "Slice-wise Polynomial",
+      "W[1]-hard": "W[1]-hard",
+      "W[2]-hard": "W[2]-hard",
+      "para-NP-hard": "Parameterized NP-hard"
+    },
+    "problem_types": {
+      "single_machine": "Single Machine Scheduling",
+      "parallel_machines": "Parallel Machine Scheduling",
+      "flow_shop": "Flow Shop Scheduling",
+      "job_shop": "Job Shop Scheduling",
+      "open_shop": "Open Shop Scheduling",
+      "precedence": "Scheduling with Precedence Constraints",
+      "interval": "Interval Scheduling",
+      "resource": "Resource Constrained Scheduling"
+    },
+    "objectives": {
+      "makespan": "Minimize Makespan (Cmax)",
+      "sum_completion": "Minimize Sum of Completion Times",
+      "weighted_completion": "Minimize Weighted Sum of Completion Times",
+      "tardiness": "Minimize Tardiness",
+      "lateness": "Minimize Lateness",
+      "num_tardy": "Minimize Number of Tardy Jobs",
+      "energy": "Minimize Energy Consumption"
+    }
+  },
+  "papers": [
+    {
+      "title": "Fifty years of research in scheduling\u2013theory and applications",
+      "authors": "A Agnetis, JC Billaut, M Pinedo, D Shabtay",
+      "year": "2025",
+      "url": "https://www.sciencedirect.com/science/article/pii/S0377221725000773",
+      "problem_types": [],
+      "objectives": [],
+      "complexity_classes": []
+    },
+    {
+      "title": "Interval scheduling and colorful independent sets",
+      "authors": "R Van Bevern, M Mnich, R Niedermeier, M Weller",
+      "year": "2015",
+      "url": "https://link.springer.com/article/10.1007/s10951-014-0398-5",
+      "problem_types": [
+        "interval"
+      ],
+      "objectives": [],
+      "complexity_classes": []
+    },
+    {
+      "title": "Fixed-parameter tractability of scheduling dependent typed tasks subject to release times and deadlines",
+      "authors": "C Hanen, A Munier Kordon",
+      "year": "2024",
+      "url": "https://link.springer.com/article/10.1007/s10951-023-00788-4",
+      "problem_types": [],
+      "objectives": [],
+      "complexity_classes": [
+        "FPT"
+      ]
+    },
+    {
+      "title": "New algorithms for minimizing the weighted number of tardy jobs on a single machine",
+      "authors": "D Hermelin, S Karhi, M Pinedo, D Shabtay",
+      "year": "2021",
+      "url": "https://link.springer.com/article/10.1007/s10479-018-2852-9",
+      "problem_types": [
+        "single_machine"
+      ],
+      "objectives": [
+        "num_tardy"
+      ],
+      "complexity_classes": []
+    },
+    {
+      "title": "Scheduling meets n-fold integer programming",
+      "authors": "D Knop, M Kouteck\u00fd",
+      "year": "2018",
+      "url": "https://link.springer.com/article/10.1007/s10951-017-0550-0",
+      "problem_types": [],
+      "objectives": [],
+      "complexity_classes": []
+    },
+    {
+      "title": "Combinatorial n-fold integer programming and applications",
+      "authors": "D Knop, M Kouteck\u00fd, M Mnich",
+      "year": "2020",
+      "url": "https://link.springer.com/article/10.1007/s10107-019-01402-2",
+      "problem_types": [],
+      "objectives": [],
+      "complexity_classes": []
+    },
+    {
+      "title": "Parameterized complexity of machine scheduling: 15 open problems",
+      "authors": "M Mnich, R Van Bevern",
+      "year": "2018",
+      "url": "https://www.sciencedirect.com/science/article/pii/S0305054818302041",
+      "problem_types": [],
+      "objectives": [],
+      "complexity_classes": []
+    },
+    {
+      "title": "[BUCH] Scheduling",
+      "authors": "ML Pinedo",
+      "year": "2012",
+      "url": "https://link.springer.com/content/pdf/10.1007/978-3-031-05921-6.pdf",
+      "problem_types": [],
+      "objectives": [],
+      "complexity_classes": []
+    },
+    {
+      "title": "Single machine scheduling with common assignable due date/due window to minimize total weighted early and late work",
+      "authors": "D Shabtay, G Mosheiov, D Oron",
+      "year": "2022",
+      "url": "https://www.sciencedirect.com/science/article/pii/S0377221722001199",
+      "problem_types": [
+        "single_machine"
+      ],
+      "objectives": [],
+      "complexity_classes": []
+    },
+    {
+      "title": "[HTML] Single-machine scheduling with release times, deadlines, setup times, and rejection",
+      "authors": "M de Weerdt, R Baart, L He",
+      "year": "2021",
+      "url": "https://www.sciencedirect.com/science/article/pii/S0377221720308468",
+      "problem_types": [],
+      "objectives": [],
+      "complexity_classes": []
+    }
+  ]
+}
