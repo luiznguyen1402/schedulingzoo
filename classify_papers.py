@@ -133,7 +133,7 @@ def main():
         classifications.append(classification)
         
     # Save classifications
-    output_file = f"bib/paper_classifications_{datetime.now().strftime('%Y%m%d')}.json"
+    output_file = f"bib/paper_classifications.json"
     with open(output_file, 'w', encoding='utf-8') as f:
         json.dump({
             'taxonomy': TAXONOMY,
