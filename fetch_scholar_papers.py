@@ -128,22 +128,42 @@ def convert_to_bibtex(papers):
     return entries
 
 def main():
-    citation_url = "https://scholar.google.com/scholar?cites=5784273002509972618&as_sdt=2005&sciodt=0,5&hl=de"
+    citation_urls = [
+        "https://scholar.google.com/scholar?cites=5784273002509972618&as_sdt=2005&sciodt=0,5&hl=de",
+        "https://scholar.google.com/scholar?start=10&hl=de&as_sdt=2005&sciodt=0,5&cites=5784273002509972618&scipsc=",
+        "https://scholar.google.com/scholar?start=20&hl=de&as_sdt=2005&sciodt=0,5&cites=5784273002509972618&scipsc=",
+        "https://scholar.google.com/scholar?start=30&hl=de&as_sdt=2005&sciodt=0,5&cites=5784273002509972618&scipsc=",
+        "https://scholar.google.com/scholar?start=40&hl=de&as_sdt=2005&sciodt=0,5&cites=5784273002509972618&scipsc=",
+        "https://scholar.google.com/scholar?start=50&hl=de&as_sdt=2005&sciodt=0,5&cites=5784273002509972618&scipsc=",
+        "https://scholar.google.com/scholar?start=60&hl=de&as_sdt=2005&sciodt=0,5&cites=5784273002509972618&scipsc=",
+        "https://scholar.google.com/scholar?start=70&hl=de&as_sdt=2005&sciodt=0,5&cites=5784273002509972618&scipsc=",
+        "https://scholar.google.com/scholar?start=81&hl=de&as_sdt=2005&sciodt=0,5&cites=5784273002509972618&scipsc=",
+        "https://scholar.google.com/scholar?start=91&hl=de&as_sdt=2005&sciodt=0,5&cites=5784273002509972618&scipsc=",
+        "https://scholar.google.com/scholar?start=101&hl=de&as_sdt=2005&sciodt=0,5&cites=5784273002509972618&scipsc="
+    ]
     
     # Create bib directory if it doesn't exist
     if not os.path.exists('bib'):
         os.makedirs('bib')
         
-    # Fetch papers
+    # Fetch papers from all URLs
     print("Starting Google Scholar paper fetch...")
-    papers = fetch_citing_papers(citation_url)
+    all_papers = []
+    for url in citation_urls:
+        print(f"\nProcessing URL: {url}")
+        papers = fetch_citing_papers(url)
+        if papers:
+            all_papers.extend(papers)
+            print(f"Found {len(papers)} papers from this URL")
+            # Add a delay between processing different URLs to avoid rate limiting
+            time.sleep(2)
     
-    if not papers:
+    if not all_papers:
         print("No papers found or error occurred")
         sys.exit(1)
         
     # Convert to BibTeX
-    bibtex_entries = convert_to_bibtex(papers)
+    bibtex_entries = convert_to_bibtex(all_papers)
     
     # Create BibTeX database
     db = bibtexparser.bibdatabase.BibDatabase()
@@ -155,7 +175,7 @@ def main():
     with open(output_file, 'w', encoding='utf-8') as f:
         f.write(writer.write(db))
         
-    print(f"Successfully saved {len(papers)} papers to {output_file}")
+    print(f"\nSuccessfully saved {len(all_papers)} papers to {output_file}")
 
 if __name__ == "__main__":
     main() 
