@@ -170,7 +170,7 @@ def main():
     db.entries = bibtex_entries
     
     # Save to file
-    output_file = f"bib/scholar_papers.bib"
+    output_file = f"bib/hard_scheduling_papers.bib"
     writer = bibtexparser.bwriter.BibTexWriter()
     with open(output_file, 'w', encoding='utf-8') as f:
         f.write(writer.write(db))
