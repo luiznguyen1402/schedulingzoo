@@ -597,7 +597,8 @@ a img {
 
 form
 {
-  display: inline;
+  display: block !important;
+  visibility: visible !important;
 }
 
 
@@ -635,3 +636,18 @@ input[type=radio]:checked + label {
 /* "Daisy, Daisy, give me your answer do. I'm half crazy all for the love of you.
 	It won't be a stylish marriage, I can't afford a carriage.
 	But you'll look sweet upon the seat of a bicycle built for two." */
+
+table {
+    display: table !important;
+    visibility: visible !important;
+}
+
+tr {
+    display: table-row !important;
+    visibility: visible !important;
+}
+
+td {
+    display: table-cell !important;
+    visibility: visible !important;
+}

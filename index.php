@@ -76,7 +76,7 @@ function eval_bool_expr(elem) {
                 }
             }
             if (tok == ')')
-                op_stack.pop(); // ceci devrait être la ’(’ correspondante
+                op_stack.pop(); // ceci devrait être la '(' correspondante
             else
                 op_stack.push(tok);
             last_val = '';

@@ -8,6 +8,10 @@ from collections import defaultdict
 from tools import *
 import xml.etree.ElementTree as ET
 from typing import *
+import codecs
+
+# Set stdout to use UTF-8
+sys.stdout = codecs.getwriter('utf-8')(sys.stdout.buffer)
 
 pp = PrettyPrinter()
 
@@ -215,7 +219,7 @@ def read_bibtex():
     for root, dirs, files in os.walk(BIBDIR):    # read all bib files from bib directory
         for file in files:
             if file.endswith(".bib"):
-                with open(root + "/" + file) as f:
+                with open(root + "/" + file, encoding='utf-8') as f:
                     for item in bibtexparser.load(f).entries:
                         item = uppercase_dict(item)
                         key = item['ID']
